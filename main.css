@@ -1,0 +1,121 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column; /* Arrange imagesets vertically */
+  align-items: center; /* Center the imagesets horizontally */
+  margin: 2vw; /* Margin around the image container */
+}
+
+.imageset1,
+.imageset2,
+.imageset3 {
+  display: flex; /* Make each set of images a flex container */
+  justify-content: center; /* Center the images within the set */
+  margin: 2vw 0; /* Add vertical spacing between image sets */
+  width: 100%; /* Full width */
+  max-width: 800px; /* Optional: Limit the max width of the image sets */
+}
+
+img {
+  width: 65%; /* Responsive image width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+video {
+  width: 65%; /* Responsive image width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Add margin to the first image in each image set */
+.imageset1 img:first-child,
+.imageset2 img:first-child,
+.imageset3 img:first-child {
+  margin-right: 2vw; /* Small gap between images */
+}
+
+/* Align items in the first imageset */
+.imageset1 {
+  align-items: flex-start; /* Align items to the start */
+}
+
+.imageset3 {
+  align-items: flex-start; /* Align items to the start */
+}
+
+#photo2 {
+  margin-top: 15rem;
+}
+
+video {
+  margin-top: 10rem;
+}
+
+#photo3 {
+  margin-top: -2rem; /* Adjust this value to move it upwards as needed */
+  margin-bottom: 6rem; /* Adjust this value to move it upwards as needed */
+}
+
+#photo5 {
+  margin-top: -3rem; /* Adjust this value to move it upwards as needed */
+  margin-bottom: 10rem; /* Adjust this value to move it upwards as needed */
+}
+
+#photo6 {
+  margin-top: 3rem; /* Adjust this value to move it upwards as needed */
+}
+
+/* Media query for smartphone responsiveness */
+@media (max-width: 600px) {
+  .image-container {
+    display: flex; /* Ensure the container uses flexbox */
+    flex-direction: column; /* Stack items in a single column */
+    align-items: center; /* Center items horizontally */
+    margin: 0; /* Remove margin around the container */
+    padding: 1rem; /* Optional padding for aesthetics */
+  }
+
+  .imageset1,
+  .imageset2,
+  .imageset3 {
+    display: block; /* Each imageset will take full width and stack */
+    width: 100%; /* Make imageset full width */
+    margin: 0; /* Remove margins for imageset in mobile view */
+  }
+
+  img,
+  video {
+    width: 100%; /* Make media items take up 100% of the container width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 2rem 0; /* Vertical spacing between items (even gaps) */
+    display: block; /* Ensure they are treated as block elements */
+  }
+
+  /* Additional specific margins for the images and video */
+  #photo1,
+  video {
+    margin-bottom: 1rem; /* Space below photo 1 and video */
+  }
+
+  #photo3 {
+    margin-top: 1rem; /* Space above photo 3 */
+  }
+
+  #photo4 {
+    margin-top: -4rem; /* Space above photo 4 */
+    margin-bottom: 1rem; /* Space below photo 4 */
+  }
+
+  #photo5 {
+    margin-top: 1rem; /* Space above photo 5 */
+    margin-bottom: 1rem; /* Space below photo 5 */
+  }
+
+  #photo6 {
+    margin-top: 2rem; /* Space above photo 6 */
+  }
+}
