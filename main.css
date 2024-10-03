@@ -1,7 +1,11 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: #333;
 }
 
 .image-container {
@@ -118,4 +122,30 @@ video {
   #photo6 {
     margin-top: 2rem; /* Space above photo 6 */
   }
+}
+
+/* Footer styling */
+footer {
+  width: 100%;
+  position: bottom;
+  bottom: 0;
+  color: #333;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* Social media icons styling */
+footer a {
+  text-decoration: none;
+  color: #333; /* Icon default color */
+  margin: 0 10px; /* Spacing between icons */
+}
+
+footer a:hover {
+  color: #0056b3; /* Hover color */
+}
+
+footer a i {
+  font-size: 24px; /* Set the size for all icons */
+  vertical-align: middle;
 }
