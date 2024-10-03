@@ -179,3 +179,13 @@ footer a i {
   font-size: 24px; /* Set the size for all icons */
   vertical-align: middle;
 }
+
+/* Add light grey lines between navbar links in the hamburger menu */
+.navbar-collapse.show .navbar-nav .nav-item:not(:last-child) .nav-link {
+  border-bottom: 1px solid lightgrey; /* Light grey line between links */
+}
+
+.navbar-collapse.show .navbar-nav .nav-link {
+  padding-top: 0.75rem; /* Add space for the lines */
+  padding-bottom: 0.75rem;
+}
