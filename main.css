@@ -1,34 +1,5 @@
-.vh-100 {
-  min-height: 100vh;
-}
-
-.navbar-nav .nav-link {
-  color: #000;
-  font-family: "Roboto", sans-serif; /* Use Roboto */
-  font-size: 16px;
-  padding-bottom: 0.5em;
-  padding-top: 0.5em;
-  text-decoration: none; /* Remove default underline */
-  border-bottom: 0.2em solid transparent; /* Hidden border */
-  transition: border-color 0.3s ease; /* Smooth transition */
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
-  border-bottom: 0.2em solid black; /* Underline on hover */
-  text-decoration: none; /* Ensure no text underline */
-}
-
-.navbar-nav .nav-item.active .nav-link {
-  border-bottom: 0.2em solid black; /* Underline active item */
-}
-
-.mainlogo {
-  height: 25%;
-  width: 25%;
-}
-
 body {
+  background-color: #f7f3ea;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -38,11 +9,68 @@ body {
   color: #333;
 }
 
+body footer {
+  background-color: #efe8d8;
+}
+
+.vh-100 {
+  min-height: 100vh;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end; /* Align the items to the right */
+  width: 100%; /* Make nav full width */
+  gap: 4rem; /* Adjust this value to set the space between li elements */
+}
+
+.nav-item {
+  text-align: center; /* Center the text */
+}
+
+.container-fluid {
+  width: 100%; /* Ensures full width */
+  max-width: 1800px; /* You can restrict the maximum width */
+  margin: 0 auto; /* Center the content horizontally if max-width is set */
+  padding-left: 15px; /* Custom padding to add spacing from the sides */
+  padding-right: 15px;
+}
+
+.navbar-nav .nav-link {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  text-decoration: none;
+  border-bottom: 0.15em solid transparent;
+  border-top: 0.15em solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  border-bottom: 0.15em solid black; /* Underline on hover */
+  border-top: 0.15em solid black; /* Underline on hover */
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  border-bottom: 0.15em solid black; /* Underline active item */
+  border-top: 0.15em solid black; /* Underline active item */
+}
+
+.mainlogo {
+  height: 25%;
+  width: 25%;
+}
+
 .image-container {
   display: flex;
   flex-direction: column; /* Arrange imagesets vertically */
   align-items: center; /* Center the imagesets horizontally */
   margin: 2vw; /* Margin around the image container */
+  position: relative; /* Ensure relative positioning for absolute children */
 }
 
 .imageset1,
@@ -53,16 +81,39 @@ body {
   margin: 2vw 0; /* Add vertical spacing between image sets */
   width: 100%; /* Full width */
   max-width: 800px; /* Optional: Limit the max width of the image sets */
+  position: relative; /* Position relative to allow absolute positioning of the title */
 }
 
 img {
   width: 65%; /* Responsive image width */
   height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Transition for zoom effect */
 }
 
-video {
-  width: 65%; /* Responsive image width */
-  height: auto; /* Maintain aspect ratio */
+img:hover {
+  transform: scale(1.05); /* Zoom in effect */
+}
+video:hover {
+  transform: scale(1.05); /* Zoom in effect */
+}
+
+.image-title {
+  position: absolute; /* Position the title overlay absolutely */
+  bottom: 10%; /* Position it at the bottom of the image */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the title */
+  background-color: rgba(0, 0, 0, 0.6); /* Dark background for readability */
+  color: white; /* Title text color */
+  padding: 5px; /* Padding around the title */
+  border-radius: 5px; /* Rounded corners for the title background */
+  opacity: 0; /* Initially hide the title */
+  transition: opacity 0.3s ease; /* Transition for fade in/out */
+}
+
+.imageset1:hover .image-title,
+.imageset2:hover .image-title,
+.imageset3:hover .image-title {
+  opacity: 1; /* Show the title on hover */
 }
 
 /* Add margin to the first image in each image set */
@@ -86,9 +137,12 @@ video {
 }
 
 video {
+  width: 65%; /* Responsive image width */
+  height: auto; /* Maintain aspect ratio */
   margin-top: 10rem;
 }
 
+/* Adjust margins for specific images */
 #photo3 {
   margin-top: -2rem; /* Adjust this value to move it upwards as needed */
   margin-bottom: 6rem; /* Adjust this value to move it upwards as needed */
