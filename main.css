@@ -153,7 +153,7 @@ body footer {
   .navbar-nav {
     flex-direction: column; /* Stack navbar items vertically */
     align-items: center; /* Center navbar items */
-    margin: 0; /* Remove margin around navbar items */
+    margin-bottom: 1vh; /* Remove margin around navbar items */
     gap: 1rem;
   }
 
@@ -178,7 +178,7 @@ body footer {
   }
 
   /* Add light grey lines between navbar links in the hamburger menu */
-  .navbar-collapse.show .navbar-nav .nav-item:not(:last-child) .nav-link {
+  .navbar-collapse.show .navbar-nav .nav-item .nav-link {
     border-bottom: 3px solid lightgrey; /* Light grey line between links */
   }
 
@@ -192,6 +192,9 @@ body footer {
     width: 100%; /* Ensure containers take full width */
   }
 
+  .img-1 {
+    margin-top: 5vh;
+  }
   .img-2 {
     margin-top: 2vh;
   }
