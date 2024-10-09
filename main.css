@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   color: #333;
@@ -39,6 +38,8 @@ body footer {
 .navbar-nav .nav-link {
   color: #000;
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 14px;
   letter-spacing: 0.2em;
   padding-bottom: 0.5em;
@@ -66,150 +67,167 @@ body footer {
 }
 
 .image-container {
-  display: flex;
-  flex-direction: column; /* Arrange imagesets vertically */
-  align-items: center; /* Center the imagesets horizontally */
-  margin: 2vw; /* Margin around the image container */
-  position: relative; /* Ensure relative positioning for absolute children */
+  text-align: center;
+  width: 100%; /* Ensure container takes up the full column width */
+  margin-top: 7vh;
 }
 
-.imageset1,
-.imageset2,
-.imageset3 {
-  display: flex; /* Make each set of images a flex container */
-  justify-content: center; /* Center the images within the set */
-  margin: 2vw 0; /* Add vertical spacing between image sets */
-  width: 100%; /* Full width */
-  max-width: 800px; /* Optional: Limit the max width of the image sets */
-  position: relative; /* Position relative to allow absolute positioning of the title */
+.img-fluid {
+  width: 45vh; /* Default size for the images */
+  height: 70vh; /* Default height for all images */
+  object-fit: cover; /* Crop the image to fit the container without distortion */
+  margin: 0 auto; /* Center the image */
+  transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
 }
 
-img {
-  width: 65%; /* Responsive image width */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease; /* Transition for zoom effect */
+.image-container:hover .img-fluid {
+  transform: scale(1.05); /* Slightly zoom in */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
 }
 
-img:hover {
-  transform: scale(1.05); /* Zoom in effect */
-}
-video:hover {
-  transform: scale(1.05); /* Zoom in effect */
+/* Customize individual images */
+.img-1 {
+  height: 72vh; /* Slightly taller */
 }
 
+.img-2 {
+  height: 60vh; /* Slightly shorter */
+  margin-top: 20vh; /* Slightly lower */
+}
+
+.img-3 {
+  height: 60vh;
+}
+
+.img-4 {
+  height: 65vh;
+  margin-top: 3vh; /* Slightly lower */
+}
+
+.img-5 {
+  height: 65vh;
+}
+
+.img-6 {
+  height: 65vh;
+  margin-top: 8vh; /* Slightly lower */
+}
+
+/* Title styling */
 .image-title {
-  position: absolute; /* Position the title overlay absolutely */
-  bottom: 10%; /* Position it at the bottom of the image */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center the title */
-  background-color: rgba(0, 0, 0, 0.6); /* Dark background for readability */
-  color: white; /* Title text color */
-  padding: 5px; /* Padding around the title */
-  border-radius: 5px; /* Rounded corners for the title background */
-  opacity: 0; /* Initially hide the title */
-  transition: opacity 0.3s ease; /* Transition for fade in/out */
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.2em;
+  margin-top: 3vh;
+  font-size: 12px;
+  text-align: center;
+  color: #333;
 }
 
-.imageset1:hover .image-title,
-.imageset2:hover .image-title,
-.imageset3:hover .image-title {
-  opacity: 1; /* Show the title on hover */
+.image-title:hover {
+  border-bottom: 0.1em solid black; /* Underline on hover */
 }
 
-/* Add margin to the first image in each image set */
-.imageset1 img:first-child,
-.imageset2 img:first-child,
-.imageset3 img:first-child {
-  margin-right: 2vw; /* Small gap between images */
-}
-
-/* Align items in the first imageset */
-.imageset1 {
-  align-items: flex-start; /* Align items to the start */
-}
-
-.imageset3 {
-  align-items: flex-start; /* Align items to the start */
-}
-
-#photo2 {
-  margin-top: 15rem;
-}
-
-video {
-  width: 65%; /* Responsive image width */
-  height: auto; /* Maintain aspect ratio */
-  margin-top: 10rem;
-}
-
-/* Adjust margins for specific images */
-#photo3 {
-  margin-top: -2rem; /* Adjust this value to move it upwards as needed */
-  margin-bottom: 6rem; /* Adjust this value to move it upwards as needed */
-}
-
-#photo5 {
-  margin-top: -3rem; /* Adjust this value to move it upwards as needed */
-  margin-bottom: 10rem; /* Adjust this value to move it upwards as needed */
-}
-
-#photo6 {
-  margin-top: 3rem; /* Adjust this value to move it upwards as needed */
-}
-
-/* Media query for smartphone responsiveness */
 @media (max-width: 600px) {
+  .navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 16px;
+    border-bottom: none;
+    border-top: none;
+    color: #000;
+    text-decoration: none;
+    background-color: transparent; /* Ensure default background is transparent */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus {
+    background-color: #ece9e2; /* Highlight color (light yellow) on hover/focus */
+    border-bottom: none; /* Underline on hover */
+    border-top: none; /* Underline on hover */
+  }
+
+  .navbar-collapse {
+    padding: 0; /* Remove padding in the collapsed state */
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Stack navbar items vertically */
+    align-items: center; /* Center navbar items */
+    margin: 0; /* Remove margin around navbar items */
+    gap: 1rem;
+  }
+
+  .nav-item {
+    margin: 0; /* Remove margin between nav items */
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem; /* Adjust padding for nav links */
+    font-size: 16px; /* Adjust font size if needed */
+    border-bottom: none; /* Remove bottom border */
+    border-top: none; /* Remove top border */
+    color: #000; /* Ensure text color is consistent */
+    text-decoration: none; /* Ensure no text decoration */
+  }
+
+  /* Remove hover and focus effects completely */
+  .nav-link:hover,
+  .nav-link:focus {
+    border-bottom: none; /* No underline on hover */
+    border-top: none; /* No top border on hover */
+  }
+
+  /* Add light grey lines between navbar links in the hamburger menu */
+  .navbar-collapse.show .navbar-nav .nav-item:not(:last-child) .nav-link {
+    border-bottom: 3px solid lightgrey; /* Light grey line between links */
+  }
+
+  .navbar-collapse.show .navbar-nav .nav-link {
+    padding-top: 0.5rem; /* Add space for the lines */
+    padding-bottom: 0.5rem;
+  }
+
   .image-container {
-    display: flex; /* Ensure the container uses flexbox */
-    flex-direction: column; /* Stack items in a single column */
-    align-items: center; /* Center items horizontally */
-    margin: 0; /* Remove margin around the container */
-    padding: 1rem; /* Optional padding for aesthetics */
+    margin: 1vh 0; /* Adjust vertical margin between image containers */
+    width: 100%; /* Ensure containers take full width */
   }
 
-  .imageset1,
-  .imageset2,
-  .imageset3 {
-    display: block; /* Each imageset will take full width and stack */
-    width: 100%; /* Make imageset full width */
-    margin: 0; /* Remove margins for imageset in mobile view */
+  .img-2 {
+    margin-top: 2vh;
   }
 
-  img,
-  video {
-    width: 100%; /* Make media items take up 100% of the container width */
-    height: auto; /* Maintain aspect ratio */
-    margin: 2rem 0; /* Vertical spacing between items (even gaps) */
-    display: block; /* Ensure they are treated as block elements */
+  .img-6 {
+    margin-top: 2vh;
   }
 
-  /* Additional specific margins for the images and video */
-  #photo1,
-  video {
-    margin-bottom: 1rem; /* Space below photo 1 and video */
+  .image-title {
+    font-size: 15px; /* Smaller title font on mobile */
+    margin-top: 1vh;
   }
 
-  #photo3 {
-    margin-top: 1rem; /* Space above photo 3 */
+  .img-fluid {
+    max-height: 50vh; /* Limit height for smaller screens */
   }
 
-  #photo4 {
-    margin-top: -4rem; /* Space above photo 4 */
-    margin-bottom: 1rem; /* Space below photo 4 */
+  /* Maintain hover effects for images */
+  .image-container:hover .img-fluid,
+  .image-container:focus-within .img-fluid {
+    transform: scale(1.05); /* Slightly zoom in */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
   }
 
-  #photo5 {
-    margin-top: 1rem; /* Space above photo 5 */
-    margin-bottom: 1rem; /* Space below photo 5 */
-  }
-
-  #photo6 {
-    margin-top: 2rem; /* Space above photo 6 */
+  /* Adding hover effect for image titles */
+  .image-title:hover,
+  .image-title:focus {
+    border-bottom: 0.1em solid black; /* Underline on hover */
   }
 }
 
 /* Footer styling */
 footer {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   width: 100%;
   position: bottom;
   bottom: 0;
@@ -232,14 +250,4 @@ footer a:hover {
 footer a i {
   font-size: 24px; /* Set the size for all icons */
   vertical-align: middle;
-}
-
-/* Add light grey lines between navbar links in the hamburger menu */
-.navbar-collapse.show .navbar-nav .nav-item:not(:last-child) .nav-link {
-  border-bottom: 1px solid lightgrey; /* Light grey line between links */
-}
-
-.navbar-collapse.show .navbar-nav .nav-link {
-  padding-top: 0.75rem; /* Add space for the lines */
-  padding-bottom: 0.75rem;
 }
